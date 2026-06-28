@@ -64,6 +64,37 @@ button:hover{
 from{opacity:0;}
 to{opacity:1;}
 }
+    
+.before{
+    color:#cfcfcf;
+    font-size:18px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-bottom:25px;
+}
+
+button{
+    background:transparent;
+    color:white;
+    border:1px solid white;
+    padding:15px 35px;
+    border-radius:40px;
+    font-size:18px;
+    cursor:pointer;
+    transition:.4s;
+}
+
+button:hover{
+    background:white;
+    color:black;
+    transform:scale(1.05);
+}
+
+.rose{
+    font-size:80px;
+    filter:drop-shadow(0 0 18px #ffffff55);
+}
+
 </style>
 
 </head>
@@ -74,41 +105,38 @@ to{opacity:1;}
 
 <div class="rose">🌹</div>
 
-<h1>Happy Birthday</h1>
+<p class="before">Before you continue...</p>
+
+<h1>Happy Birthday, Jim.</h1>
 
 <p id="typing"></p>
 
-<button onclick="alert('The birthday letter is coming soon... ❤️')">
-Open My Letter
+<button onclick="startStory()">
+Continue →
 </button>
 
 </div>
 
 <script>
+const text =
+"This isn't just another birthday message... It's something made just for you. 🤍";
 
-const text="To the boy who unexpectedly became one of my favourite people... 🤍";
+let i = 0;
 
-let i=0;
-
-function typeWriter(){
-
-if(i<text.length){
-
-document.getElementById("typing").innerHTML+=text.charAt(i);
-
-i++;
-
-setTimeout(typeWriter,55);
-
-}
-
+function typeWriter() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 50);
+    }
 }
 
 typeWriter();
 
+function startStory() {
+    alert("🌹 The story begins here... (Next we'll make this button open your cinematic letter instead of an alert!)");
+}
 </script>
 
 </body>
 </html>    
-
-    
