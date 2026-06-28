@@ -1,48 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday 🤍</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday 🤍</title>
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:Georgia, serif;
-        }
+<style>
+body{
+    margin:0;
+    background:#000;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    text-align:center;
+    font-family:Georgia, serif;
+}
 
-        body{
-            background:#000;
-            color:white;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            height:100vh;
-            text-align:center;
-            overflow:hidden;
-        }
+.container{
+    animation:fade 2s;
+    padding:20px;
+}
 
-        .container{
-            padding:20px;
-        }
+.rose{
+    font-size:70px;
+    animation:float 3s infinite ease-in-out;
+}
 
-        h1{
-            font-size:3rem;
-            margin-bottom:20px;
-        }
+h1{
+    font-size:48px;
+    margin:20px 0;
+}
 
-        #typing{
-            font-size:1.3rem;
-            color:#d4d4d4;
-            min-height:60px;
-        }
+#typing{
+    font-size:22px;
+    color:#d7d7d7;
+    min-height:70px;
+}
 
-        .rose{
-            font-size:70px;
-            animation:float 3s ease-in-out infinite;
-            margin-bottom:25px;
-        }
+button{
+    margin-top:30px;
+    padding:15px 35px;
+    border:none;
+    border-radius:40px;
+    background:white;
+    color:black;
+    font-size:18px;
+    cursor:pointer;
+}
 
-        @keyfr
+button:hover{
+    transform:scale(1.05);
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0);}
+}
+
+@keyframes fade{
+from{opacity:0;}
+to{opacity:1;}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="rose">🌹</div>
+
+<h1>Happy Birthday</h1>
+
+<p id="typing"></p>
+
+<button onclick="alert('The birthday letter is coming soon... ❤️')">
+Open My Letter
+</button>
+
+</div>
+
+<script>
+
+const text="To the boy who unexpectedly became one of my favourite people... 🤍";
+
+let i=0;
+
+function typeWriter(){
+
+if(i<text.length){
+
+document.getElementById("typing").innerHTML+=text.charAt(i);
+
+i++;
+
+setTimeout(typeWriter,55);
+
+}
+
+}
+
+typeWriter();
+
+</script>
+
+</body>
+</html>    
+
+    
